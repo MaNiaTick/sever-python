@@ -1,7 +1,6 @@
 import pytest
 from app import app
 
-print("hola")
 @pytest.fixture
 def client():
     # Configura el cliente de pruebas de la aplicación Flask
@@ -12,8 +11,17 @@ def client():
 
 def test_saludar_status_code(client):
     """Verifica que la ruta /saludar retorne un código de estado 200."""
-    response = client.get("/saluda")
+    response = client.get("/saludar")
     assert response.status_code == 200
+    saludo = response.get_json()["saludo"]
+    print(saludo)
+
+def test_cachipun_status_code(client):
+    response = client.get("/cachipun")
+    assert response.status_code == 200
+    mensaje = response.get_json()["mensaje"]
+    assert mensaje in ["Piedra", "Papel", "Tijera"]
+    print(mensaje)
 
 
 def test_ruta_no_existente_status_code(client):

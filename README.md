@@ -1,41 +1,14 @@
-# Servidor Flask - Endpoint Saludar
+# Instalar APIs
 
-Este proyecto es un servidor web básico desarrollado en Python utilizando el microframework **Flask**.
-
-## Requisitos previos
-
-Asegúrate de tener instalado **Python** (versión 3.8 o superior) en tu sistema.
-
-## Librerías a instalar
-
-La única dependencia externa necesaria para este proyecto es **Flask**. 
-
-Puedes instalarla ejecutando el siguiente comando en tu terminal:
-
-\`\`\`bash
 pip install Flask
-\`\`\`
+pip install pytest
 
-O si prefieres utilizar un archivo de requerimientos, puedes crear un archivo `requirements.txt` con el siguiente contenido:
+## Como ejecutar
 
-\`\`\`text
-Flask>=3.0.0
-\`\`\`
+py app.py
+py test_app.py
 
-Y luego instalarlo con:
-
-\`\`\`bash
-pip install -r requirements.txt
-\`\`\`
-
-## Cómo ejecutar el servidor
-
-1. Abre tu terminal en la carpeta del proyecto.
-2. Ejecuta el script de Python:
-   \`\`\`bash
-   python app.py
-   \`\`\`
-3. El servidor se iniciará localmente en `http://127.0.0.1:5000/saludar`.
+El servidor se iniciará localmente en `http://127.0.0.1:5000/saludar`
 
 ## Endpoints disponibles
 

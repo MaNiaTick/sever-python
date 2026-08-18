@@ -1,12 +1,18 @@
 from flask import Flask, jsonify
+import random
 
 app = Flask(__name__)
 
 
 @app.route("/saludar", methods=["GET"])
 def saludar():
-    # Retorna un JSON con las palabras solicitadas
-    return jsonify({"mensaje": ["saludo", "hola"]})
+    return jsonify({"saludo": "Hola!"})
+
+@app.route("/cachipun", methods=["GET"])
+def cachipun():
+    opciones = ["Piedra","Papel", "Tijera"]
+    eleccion = random.choice(opciones)
+    return jsonify({"mensaje": eleccion})
 
 
 if __name__ == "__main__":
